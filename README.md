@@ -1,7 +1,12 @@
 #LCS
 Finding the **Longest Common Subsequence** in a Directed Acyclic Graph written in Java
 
-## Example
+### Run Tests
+```
+./gradlew test
+```
+
+### Example
 Given Sequences:
 ```
 abcde
