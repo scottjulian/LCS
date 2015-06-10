@@ -68,22 +68,22 @@ public class DirectedAcyclicGraph {
      * Topological Sort Algorithm for a DirectedAcyclicGraph
      *
 
-    L - Empty list that will contain the sorted elements
-    S - Set of all nodes with no incoming edges
+     L - Empty list that will contain the sorted elements
+     S - Set of all nodes with no incoming edges
 
-        while S is non-empty do
-            remove a node n from S
-            insert n into L
-            for each node m with an edge e from n to m do
-                remove edge e from the graph
-                if m has no other incoming edges then
-                    insert m into S
-        if graph has edges then
-            return error (graph has at least one cycle)
-        else
-            return L (a topologically sorted order)
+     while S is non-empty do
+     remove a node n from S
+     insert n into L
+     for each node m with an edge e from n to m do
+     remove edge e from the graph
+     if m has no other incoming edges then
+     insert m into S
+     if graph has edges then
+     return error (graph has at least one cycle)
+     else
+     return L (a topologically sorted order)
 
-    **/
+     **/
     private void topologicalSortDAG() {
         List<Character> L = new ArrayList<Character>();
         List<Character> S = new ArrayList<Character>();
@@ -139,22 +139,22 @@ public class DirectedAcyclicGraph {
         }
     }
 
-   /**
-    * Longest Path Algorithm for a DirectedAcyclicGraph
-    *
-        G = DirectedAcyclicGraph
-        output: Length of the longest path
+    /**
+     * Longest Path Algorithm for a DirectedAcyclicGraph
+     *
+     G = DirectedAcyclicGraph
+     output: Length of the longest path
 
-        length_to = array with |V(G)| elements of type int with default value 0
+     length_to = array with |V(G)| elements of type int with default value 0
 
-        for each vertex v in topOrder(G) do
-            for each edge (v, w) in E(G) do
-                if length_to[w] <= length_to[v] + 1 then
-                    length_to[w] = length_to[v] + 1
+     for each vertex v in topOrder(G) do
+     for each edge (v, w) in E(G) do
+     if length_to[w] <= length_to[v] + 1 then
+     length_to[w] = length_to[v] + 1
 
-        return max(length_to[v] for v in V(G))
+     return max(length_to[v] for v in V(G))
 
-    **/
+     **/
     private void findLongestPath(){
         ArrayList<Pair> G = new ArrayList<Pair>(_intersectedPairs);
         String topOrder = _topologicalOrder;
@@ -240,7 +240,7 @@ public class DirectedAcyclicGraph {
     public String getLongestPath(){
         String lp = "";
         for(char q : _longestPath) {
-            lp += q + " ";
+            lp += q;
         }
         return lp;
     }
@@ -258,7 +258,7 @@ public class DirectedAcyclicGraph {
     public String getIntersections(){
         String out = "";
         for(Pair p : _intersectedPairs) {
-            out += "(" + p.getFirst() + " " + p.getSecond() + ") ";
+            out += "(" + p.getFirst() + "," + p.getSecond() + ")";
         }
         return out;
     }
