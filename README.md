@@ -1,6 +1,9 @@
 #LCS
 Finding the **Longest Common Subsequence** in a Directed Acyclic Graph written in Java
 
+### Read
+https://scottjulian.com/finding-the-longest-common-subsequence/
+
 ### Run Tests
 ```
 ./gradlew test
@@ -29,6 +32,3 @@ topological order of nodes:
 longest common subsequence:
   b c e
 ```
-
-### Read the blog post
-http://blog.scottjulian.net/2015/03/19/finding-the-longest-common-subsequence/
